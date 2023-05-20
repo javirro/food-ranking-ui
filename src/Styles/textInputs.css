@@ -12,7 +12,7 @@
     color: rgb(71, 71, 71);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 425px) {
     .inputs-container {
         display: flex;
         flex-direction: column;
