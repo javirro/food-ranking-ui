@@ -1,8 +1,26 @@
+.routes-title {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
 @media (min-width: 600px) {
     .main-routes-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .routes-title {
+        text-align: center;
+        margin-bottom: 0px;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 400px) {
+    .routes-title {
+        text-align: center;
+        margin-bottom: 0px;
+        margin-left: 0px;
     }
 }

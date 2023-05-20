@@ -1,7 +1,6 @@
 .inputs-container {
     display: grid;
     grid-template-columns: 270px 120px;
-    margin-top: 10px;
     margin-left: 10px;
 }
 
@@ -21,8 +20,8 @@
         align-items: center;
         gap: 5px;
         width: 80%;
-        padding: 20px;
-        margin-top: 10px;
+        padding: 10px 20px;
+        margin-top: 0px;
     }
     .text-inputs {
         width: 100%;

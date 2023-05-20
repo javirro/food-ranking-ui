@@ -11,8 +11,9 @@ const Cheesecakes = () => {
   })
   return (
     <main className="main-routes-container">
+      <h3 className="routes-title">Cheesecakes</h3>
       <TextInputs data={data} setData={setData} />
-      <AddItemButton />
+      <AddItemButton data={data} />
     </main>)
 }
 
