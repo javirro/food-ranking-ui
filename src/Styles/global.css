@@ -1,0 +1,13 @@
+/* For all the screens and with a max width 500px */
+
+@media all and (max-width: 300px) {}
+
+
+/* This media query is applied when we want to print the page */
+
+@media print and (max-width: 300px) {}
+
+
+/* This media query is applied when we the width is higher than the height of the screen */
+
+@media (orientation: landscape) {}
