@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import TextInputs from "../Components/TextInputs"
+import AddItemButton from "../Components/AddItemButton"
 const Cheesecakes = () => {
   const [data, setData] = useState({
     name: null,
@@ -11,6 +12,7 @@ const Cheesecakes = () => {
   return (
     <main className="main-routes-container">
       <TextInputs data={data} setData={setData} />
+      <AddItemButton />
     </main>)
 }
 

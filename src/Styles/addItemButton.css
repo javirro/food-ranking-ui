@@ -1,0 +1,24 @@
+.save-btn-container {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+@media (max-width: 400px) {
+    .save-btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+}
+
+.save-btn {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100px;
+}
