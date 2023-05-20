@@ -1,0 +1,8 @@
+@media (min-width: 600px) {
+    .main-routes-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

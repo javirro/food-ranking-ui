@@ -4,7 +4,7 @@ import Cheesecakes from "./Routes/Cheesecakes"
 import Burgers from "./Routes/Burgers"
 import Restaurants from "./Routes/Restaurants"
 import NavBar from "./Routes/NavBar"
-
+import './Styles/global.css'
 function App() {
 
   return (
