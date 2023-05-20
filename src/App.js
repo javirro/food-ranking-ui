@@ -12,13 +12,14 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <NavBar />
+        <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />}>
+            <Route path="/ranking/:type" element={<Ranking />} />
+          </Route>
           <Route path="/cheesecakes" element={<Cheesecakes />} />
           <Route path="/burgers" element={<Burgers />} />
           <Route path="/restaurants" element={<Restaurants />} />
-          <Route path="/ranking/:type" element={<Ranking />} />
         </Routes>
       </BrowserRouter>
     </div>
