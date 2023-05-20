@@ -4,7 +4,9 @@ import Cheesecakes from "./Routes/Cheesecakes"
 import Burgers from "./Routes/Burgers"
 import Restaurants from "./Routes/Restaurants"
 import NavBar from "./Routes/NavBar"
+import Ranking from "./Routes/Ranking"
 import './Styles/global.css'
+
 function App() {
 
   return (
@@ -16,6 +18,7 @@ function App() {
           <Route path="/cheesecakes" element={<Cheesecakes />} />
           <Route path="/burgers" element={<Burgers />} />
           <Route path="/restaurants" element={<Restaurants />} />
+          <Route path="/ranking/:type" element={<Ranking />} />
         </Routes>
       </BrowserRouter>
     </div>

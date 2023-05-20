@@ -24,3 +24,23 @@
         margin-left: 0px;
     }
 }
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.links {
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
