@@ -1,0 +1,30 @@
+.inputs-container {
+    display: grid;
+    grid-template-columns: 270px 120px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.text-inputs {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    color: rgb(71, 71, 71);
+}
+
+@media (max-width: 400px) {
+    .inputs-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 80%;
+        padding: 20px;
+        margin-top: 10px;
+    }
+    .text-inputs {
+        width: 100%;
+    }
+}

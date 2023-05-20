@@ -11,7 +11,7 @@ nav {
     padding: 10px;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 400px) {
     .nav-icon {
         display: none;
     }
@@ -26,7 +26,7 @@ nav {
     padding: 10px;
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 400px) {
     .nav-items {
         display: flex;
         flex-direction: column;
