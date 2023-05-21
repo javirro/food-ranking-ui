@@ -14,7 +14,12 @@ const useFetch = ({ url, trigger, requestOptions }) => {
           setError(res.status)
           return
         })
-        .then((data) => setResult(data))
+        .then((data) => {
+          if (data) {
+            setResult(data)
+            setError(null)
+          }
+        })
         .catch((e) => setError(e))
         .finally(() => setLoaded(true))
     }
