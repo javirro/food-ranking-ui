@@ -1,33 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { useParams } from "react-router-dom"
 import { endpoints } from "../Api/endpoints"
 import '../Styles/ranking.css'
+import useFetch from "../Hooks/useFetch"
 
 const Ranking = () => {
   const { type } = useParams()
-  const [result, setResult] = useState()
-  console.log(result)
-  useEffect(() => {
-   const fetchRanking = async () => {
-    try {
-      const res = await fetch(`${endpoints.get}?table=${type}`)
-      if (res.ok) {
-        if (res.status === 200) setResult(await res.json())
-      } else {
-       console.log("Error with the response")
-      }
-    } catch (e) {
-      console.log(e.message)
-      setResult("Network Error")
-    }
-    }
+  const url = `${endpoints.get}?table=${type}`
+  const { result, loaded, error } = useFetch({ url })
 
-    fetchRanking()
-
-  },[type])
+  console.log(error)
   return (
     <div className="ranking-container">
-      <table>
+      {loaded && <table>
         <thead>
           <tr>
             <th>Ranking</th>
@@ -36,25 +21,21 @@ const Ranking = () => {
             <th>Price</th>
             <th>Extra</th>
           </tr>
-
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Prueba</td>
-            <td>Coruña</td>
-            <td>5.5 €</td>
-            <td>...</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Prueba</td>
-            <td>Coruña</td>
-            <td>4.55 €</td>
-            <td>...</td>
-          </tr>
+          {
+            result?.map(row => (
+              <tr key={row.position}>
+                <td>{row?.position}</td>
+                <td>{row?.name}</td>
+                <td>{row?.ubication}</td>
+                <td>{row?.price} €</td>
+                <td>{row?.extra_info}</td>
+              </tr>
+            ))
+          }
         </tbody>
-      </table>
+      </table>}
     </div>
   )
 }
