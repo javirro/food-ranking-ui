@@ -1,6 +1,7 @@
 import React from "react"
 import { useParams } from "react-router-dom"
 import { endpoints } from "../Api/endpoints"
+import info from '../Images/info-icon.svg'
 import '../Styles/ranking.css'
 import useFetch from "../Hooks/useFetch"
 
@@ -16,10 +17,10 @@ const Ranking = () => {
       {loaded && <table>
         <thead>
           <tr>
-            <th>Ranking</th>
+            <th className="ranking-column">Ranking</th>
             <th>Restaurant</th>
             <th>Where</th>
-            <th>Price</th>
+            <th className="ranking-column">Price</th>
             <th>Extra</th>
           </tr>
         </thead>
@@ -27,11 +28,11 @@ const Ranking = () => {
           {
             result?.map(row => (
               <tr key={row.position}>
-                <td>{row?.position}</td>
+                <td className="ranking-column">{row?.position}</td>
                 <td>{row?.name}</td>
                 <td>{row?.ubication}</td>
-                <td>{row?.price} €</td>
-                <td>{row?.extra_info}</td>
+                <td className="ranking-column">{row?.price} €</td>
+                <td className="ranking-column"><img src={info}  alt="info-icon" className="info-icon"/></td>
               </tr>
             ))
           }

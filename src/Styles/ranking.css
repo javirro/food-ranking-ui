@@ -13,17 +13,45 @@ table {
     text-align: left;
 }
 
+th,
+tr,
+td {
+    padding: 15px 5px;
+    border-bottom: 2px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+th {
+    padding: 10px 5px;
+}
+
+.ranking-column {
+    width: 14%;
+}
+
+.info-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
 @media (min-width: 600px) {
     table {
         width: 600px;
     }
 }
 
-tr,
-td {
-    padding: 15px;
-    line-height: 1.5;
-    border-bottom: 2px solid black;
-    border-collapse: collapse;
-    text-align: left;
+@media (max-width: 425px) {
+    th,
+    tr,
+    td {
+        font-size: 0.78rem;
+    }
+    .info-icon {
+        width: 22px;
+        height: 22px;
+    }
 }
