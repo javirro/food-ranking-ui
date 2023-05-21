@@ -7,7 +7,8 @@ import useFetch from "../Hooks/useFetch"
 const Ranking = () => {
   const { type } = useParams()
   const url = `${endpoints.get}?table=${type}`
-  const { result, loaded, error } = useFetch({ url })
+  const trigger = true
+  const { result, loaded, error } = useFetch({ url, trigger })
 
   console.log(error)
   return (
