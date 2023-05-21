@@ -2,6 +2,8 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import { endpoints } from "../Api/endpoints"
 import info from '../Images/info-icon.svg'
+import rubbish from '../Images/rubbish-icon.svg'
+import edit from '../Images/edit-icon.svg'
 import '../Styles/ranking.css'
 import useFetch from "../Hooks/useFetch"
 
@@ -20,8 +22,7 @@ const Ranking = () => {
             <th className="ranking-column">Ranking</th>
             <th>Restaurant</th>
             <th>Where</th>
-            <th className="ranking-column">Price</th>
-            <th>Extra</th>
+            <th>Options</th>
           </tr>
         </thead>
         <tbody>
@@ -31,8 +32,11 @@ const Ranking = () => {
                 <td className="ranking-column">{row?.position}</td>
                 <td>{row?.name}</td>
                 <td>{row?.ubication}</td>
-                <td className="ranking-column">{row?.price} €</td>
-                <td className="ranking-column"><img src={info}  alt="info-icon" className="info-icon"/></td>
+                <td >
+                  <img src={info} alt="info-icon" className="info-icon" />
+                  <img src={edit} alt="edit-icon" className="edit-icon" />
+                  <img src={rubbish} alt="delete-icon" className="info-icon" />
+                </td>
               </tr>
             ))
           }
