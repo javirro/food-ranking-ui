@@ -13,13 +13,13 @@ const Ranking = () => {
   const url = `${endpoints.get}?table=${type}`
   const { result, loaded, error } = useFetch({ url, trigger })
 
- const deleteItem = async(id)  => {
-  setTrigger(false)
-  fetch(`${endpoints.delete}?table=${type}&id=${id}`)
-  .then(res => res.json())
-  .then(data => data)
-  .finally(()=> setTrigger(true))
- }
+  const deleteItem = async (id) => {
+    setTrigger(false)
+    fetch(`${endpoints.delete}?table=${type}&id=${id}`)
+      .then(res => res.json())
+      .then(data => data)
+      .finally(() => setTrigger(true))
+  }
 
   return (
     <div className="ranking-container">
