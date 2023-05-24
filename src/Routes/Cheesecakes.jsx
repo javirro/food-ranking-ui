@@ -5,11 +5,11 @@ import AddItemButton from "../Components/AddItemButton"
 
 const Cheesecakes = () => {
   const [data, setData] = useState({
-    name: null,
-    position: null,
-    ubication: null,
-    price: null,
-    extra: null
+    name: undefined,
+    position: undefined,
+    ubication: undefined,
+    price: undefined,
+    extra: undefined
   })
   const location = useLocation()
   const table = location.pathname.slice(1)
