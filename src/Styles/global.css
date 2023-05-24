@@ -12,6 +12,17 @@
     margin-top: 15px;
 }
 
+.links {
+    display: inline-block;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
 @media (min-width: 600px) {
     .main-routes-container {
         display: flex;
@@ -40,18 +51,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 6px;
         margin-top: 10px;
     }
-}
-
-.links {
-    display: inline-block;
-    width: 200px;
-    padding: 20px;
-    border-radius: 5px;
-    border: 2px solid black;
-    text-decoration: none;
-    text-align: center;
-    color: black;
+    .links {
+        padding: 6px;
+        font-size: 1rem;
+    }
 }

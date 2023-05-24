@@ -14,7 +14,7 @@ const Ranking = () => {
   const { result, loaded, error } = useFetch({ url, trigger })
 
   const deleteItem = async (id) => {
-    setTrigger(false)
+    setTrigger(false) // To refresh data once the item has been deleted
     fetch(`${endpoints.delete}?table=${type}&id=${id}`)
       .then(res => res.json())
       .then(data => data)
