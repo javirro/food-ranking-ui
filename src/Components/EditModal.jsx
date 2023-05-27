@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import '../Styles/editModal.css'
-import '../Styles/modal.css'
 import { endpoints } from '../Api/endpoints'
 import { headerPOST } from '../Api/headers'
+import { validatePosition } from '../ErrorValidation/validator'
+import { InputError } from '../ErrorValidation/CustomizeError'
+import '../Styles/editModal.css'
+import '../Styles/modal.css'
+
 
 const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
-  const [error, setError] = useState(null)
   const [data, setData] = useState({
     id: row?.id,
     name: row?.name,
@@ -15,8 +17,14 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
     extra: row?.extra
   })
   const url = endpoints.update
-  console.log(error)
   const updateRow = () => {
+    try {
+      validatePosition(data.position)
+    } catch (e) {
+      if (e instanceof InputError) setTrigger(false)
+      return
+    }
+
     const requestOptions = {
       method: "POST",
       headers: headerPOST,
@@ -30,15 +38,11 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
     fetch(url, requestOptions)
       .then((res) => {
         if (res.ok) return res.json()
-        setError(res.status)
-        return
       })
       .then((data) => {
-        if (data) {
-          setError(null)
-        }
+        if (data) return data
       })
-      .catch((e) => setError(e))
+      .catch((e) => console.error(e))
       .finally(() => setTrigger(true))
   }
 

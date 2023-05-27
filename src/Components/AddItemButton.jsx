@@ -4,11 +4,11 @@ import { endpoints } from "../Api/endpoints"
 import { headerPOST } from "../Api/headers"
 import { validatePosition, validatePrice } from "../ErrorValidation/validator"
 import "../Styles/addItemButton.css"
-import { InputError } from "../ErrorValidation/CustomizeError"
+import ErrorInputsMessage from "./ErrorInputsMessage"
 
 const AddItemButton = ({ data, table }) => {
   const [trigger, setTrigger] = useState(false)
-
+  const [inputError, setInputError] = useState(false)
   const url = endpoints.add
   const requestOptions = useMemo(() => {
     const options = {
@@ -27,7 +27,8 @@ const AddItemButton = ({ data, table }) => {
       validatePrice(data.price)
       setTrigger(true)
     } catch (error) {
-      if (error instanceof InputError) setTrigger(false)
+        setTrigger(false)
+        setInputError(error)
     }
   }
 
@@ -35,7 +36,7 @@ const AddItemButton = ({ data, table }) => {
     <div className="save-btn-container">
       <button className="save-btn" onClick={addItemHandler}>Save data</button>
       {loaded && !error && <span> Register done </span>}
-      {error && <span> Register Fail </span>}
+      {(inputError || error) && <ErrorInputsMessage networkError={error} inputError={inputError}/>}
     </div>
 
   )

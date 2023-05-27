@@ -3,10 +3,9 @@ import { useEffect, useState } from "react"
 const useFetch = ({ url, trigger, requestOptions }) => {
   const [result, setResult] = useState(null)
   const [loaded, setLoaded] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(undefined)
 
   useEffect(() => {
-    console.log(requestOptions)
     if (trigger) {
       setLoaded(false)
       fetch(url, requestOptions)
@@ -17,9 +16,8 @@ const useFetch = ({ url, trigger, requestOptions }) => {
         })
         .then((data) => {
           if (data) {
-            console.log(data)
             setResult(data)
-            setError(null)
+            setError(undefined)
           }
         })
         .catch((e) => setError(e))
