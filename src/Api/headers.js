@@ -5,5 +5,7 @@ export const headerPOST = {
 };
 
 export const headerGET = {
-  "mode": "no-cors"
+  "Accept": "application/json",
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*",
 };
