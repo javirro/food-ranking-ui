@@ -5,5 +5,5 @@ export const headerPOST = {
 };
 
 export const headerGET = {
-  "Access-Control-Allow-Origin": "*",
+  "mode": "no-cors"
 };
