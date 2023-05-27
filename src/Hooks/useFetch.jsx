@@ -6,6 +6,7 @@ const useFetch = ({ url, trigger, requestOptions }) => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    console.log(requestOptions)
     if (trigger) {
       setLoaded(false)
       fetch(url, requestOptions)
