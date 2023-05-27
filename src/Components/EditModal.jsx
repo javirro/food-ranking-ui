@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import '../Styles/editModal.css'
 import '../Styles/modal.css'
+import { endpoints } from '../Api/endpoints'
+import { headerPOST } from '../Api/headers'
 
-const EditModal = ({ row, setIsEditModal }) => {
+const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
+  const [error, setError] = useState(null)
   const [data, setData] = useState({
     id: row?.id,
     name: row?.name,
@@ -11,10 +14,34 @@ const EditModal = ({ row, setIsEditModal }) => {
     price: row?.price,
     extra: row?.extra
   })
-
+  const url = endpoints.update
+  console.log(error)
   const updateRow = () => {
-  
+    const requestOptions = {
+      method: "POST",
+      headers: headerPOST,
+      body: JSON.stringify({
+        table,
+        id: data.id,
+        position: data.position
+      })
+    }
+    setTrigger(false)
+    fetch(url, requestOptions)
+      .then((res) => {
+        if (res.ok) return res.json()
+        setError(res.status)
+        return
+      })
+      .then((data) => {
+        if (data) {
+          setError(null)
+        }
+      })
+      .catch((e) => setError(e))
+      .finally(() => setTrigger(true))
   }
+
   return (
     <div className="modal">
       <div className="modal-content" >

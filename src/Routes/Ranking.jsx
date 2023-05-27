@@ -18,20 +18,20 @@ const Ranking = () => {
 
   const deleteItem = async (row) => {
     setTrigger(false)
-    fetch(`${endpoints.delete}?table=${type}&id=${row.id}&position=${row.position}`)
+    fetch(`${endpoints.delete}?table=${type}&id=${row?.id}&position=${row?.position}`)
       .then(res => res.json())
       .then(data => data)
       .finally(() => setTrigger(true))
   }
 
-  const editItem  = (row) => {
+  const editItem = (row) => {
     setIsEditModal(true)
     setRowToEdit(row)
   }
 
-  return(
+  return (
     <div className="ranking-container">
-      {isEditModal && <EditModal row ={rowToEdit} setIsEditModal = {setIsEditModal} />}
+      {isEditModal && <EditModal table={type} row={rowToEdit} setIsEditModal={setIsEditModal}  setTrigger={setTrigger}/>}
       {!error && loaded && <table>
         <thead>
           <tr>
@@ -50,7 +50,7 @@ const Ranking = () => {
                 <td>{row?.ubication}</td>
                 <td >
                   <img src={info} alt="info-icon" className="info-icon" />
-                  <img src={edit} alt="edit-icon" className="edit-icon" onClick={() => editItem(row)}/>
+                  <img src={edit} alt="edit-icon" className="edit-icon" onClick={() => editItem(row)} />
                   <img src={rubbish} alt="delete-icon" className="info-icon" onClick={() => deleteItem(row)} />
                 </td>
               </tr>
