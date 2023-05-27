@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useMemo } from "react"
 import { useParams } from "react-router-dom"
 import { endpoints } from "../Api/endpoints"
 import info from '../Images/info-icon.svg'
@@ -7,6 +7,7 @@ import edit from '../Images/edit-icon.svg'
 import '../Styles/ranking.css'
 import useFetch from "../Hooks/useFetch"
 import EditModal from "../Components/EditModal"
+import { headerGET } from "../Api/headers"
 
 const Ranking = () => {
   const { type } = useParams()
@@ -14,7 +15,16 @@ const Ranking = () => {
   const [isEditModal, setIsEditModal] = useState(false)
   const [rowToEdit, setRowToEdit] = useState(null)
   const url = `${endpoints.get}?table=${type}`
-  const { result, loaded, error } = useFetch({ url, trigger })
+
+  const requestOptions = useMemo(() => {
+    const options = {
+      method: "GET",
+      headers: headerGET,
+    }
+    return options
+  }, [])
+
+  const { result, loaded, error } = useFetch({ url, requestOptions, trigger })
 
   const deleteItem = async (row) => {
     setTrigger(false)
@@ -31,7 +41,7 @@ const Ranking = () => {
 
   return (
     <div className="ranking-container">
-      {isEditModal && <EditModal table={type} row={rowToEdit} setIsEditModal={setIsEditModal}  setTrigger={setTrigger}/>}
+      {isEditModal && <EditModal table={type} row={rowToEdit} setIsEditModal={setIsEditModal} setTrigger={setTrigger} />}
       {!error && loaded && <table>
         <thead>
           <tr>
