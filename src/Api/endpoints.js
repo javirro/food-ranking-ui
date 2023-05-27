@@ -5,5 +5,6 @@ export const baseURL = "http://localhost:7071/api/";
 export const endpoints = {
   add: baseURL + "add-item",
   delete: baseURL + "delete-item",
-  get: baseURL + "get-all-items"
+  get: baseURL + "get-all-items",
+  update: baseURL + "update-item"
 }
