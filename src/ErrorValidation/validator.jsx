@@ -6,6 +6,9 @@ export const validatePosition = (position) => {
 }
 
 export const validatePrice = (price) => {
-  const decimalNumberPatter = /^-?\d+(\.\d+)?$/ // Regex to know if the variable is a decimal number
-  if (!decimalNumberPatter.test(price)) throw new PriceError("Price must be a  decimal number")
+  if (price) {
+    const decimalNumberPatter = /^-?\d+(\.\d+)?$/ // Regex to know if the variable is a decimal number
+    if (!decimalNumberPatter.test(price)) throw new PriceError("Price must be a  decimal number")
+  }
+
 }
