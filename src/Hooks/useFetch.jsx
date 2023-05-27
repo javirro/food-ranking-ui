@@ -16,6 +16,7 @@ const useFetch = ({ url, trigger, requestOptions }) => {
         })
         .then((data) => {
           if (data) {
+            console.log(data)
             setResult(data)
             setError(null)
           }

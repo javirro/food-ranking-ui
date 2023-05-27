@@ -5,7 +5,5 @@ export const headerPOST = {
 };
 
 export const headerGET = {
-  "Accept": "application/json",
-  "Content-Type": "application/json",
   "Access-Control-Allow-Origin": "*",
 };
