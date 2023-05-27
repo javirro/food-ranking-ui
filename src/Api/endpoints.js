@@ -1,4 +1,4 @@
-export const baseURL = process.env.REACT_APP_API_KEY ? "https://food-ranking-api.azurewebsites.net/" : "http://localhost:7071/api/";
+export const baseURL = process.env.REACT_APP_API_KEY ? "https://food-ranking-api.azurewebsites.net/api/" : "http://localhost:7071/api/";
 export const endpoints = {
   add: baseURL + "add-item",
   delete: baseURL + "delete-item",
