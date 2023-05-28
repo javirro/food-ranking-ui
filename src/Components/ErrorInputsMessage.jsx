@@ -1,5 +1,7 @@
-import '../Styles/addItemButton.css'
+
 import { PositionError, PriceError } from '../ErrorValidation/CustomizeError'
+import '../Styles/addItemButton.css'
+
 const ErrorInputsMessage = ({ networkError, inputError }) => {
   if (inputError) {
     return (

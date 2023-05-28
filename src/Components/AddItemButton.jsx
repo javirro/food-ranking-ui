@@ -5,6 +5,7 @@ import { headerPOST } from "../Api/headers"
 import { validatePosition, validatePrice } from "../ErrorValidation/validator"
 import "../Styles/addItemButton.css"
 import ErrorInputsMessage from "./ErrorInputsMessage"
+import DoneInputsMessage from "./DoneInputsMessage"
 
 const AddItemButton = ({ data, table }) => {
   const [trigger, setTrigger] = useState(false)
@@ -20,23 +21,22 @@ const AddItemButton = ({ data, table }) => {
   }, [data, table])
 
   const { loaded, error } = useFetch({ url, trigger, requestOptions })
-
   const addItemHandler = () => {
     try {
       validatePosition(data.position)
       validatePrice(data.price)
       setTrigger(true)
     } catch (error) {
-        setTrigger(false)
-        setInputError(error)
+      setTrigger(false)
+      setInputError(error)
     }
   }
 
   return (
     <div className="save-btn-container">
       <button className="save-btn" onClick={addItemHandler}>Save data</button>
-      {loaded && !error && <span> Register done </span>}
-      {(inputError || error) && <ErrorInputsMessage networkError={error} inputError={inputError}/>}
+      {loaded && <DoneInputsMessage data={data} />}
+      {(inputError || error) && <ErrorInputsMessage networkError={error} inputError={inputError} />}
     </div>
 
   )

@@ -22,7 +22,7 @@
     padding: 4px;
     border-radius: 5px;
     border: 1px solid black;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .error-message-container {
@@ -36,5 +36,18 @@
     font-size: 0.9rem;
     font-weight: bold;
     background-color: rgb(227, 114, 137);
+    border-radius: 5px;
+}
+
+.done-message {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 5px;
+    color: rgb(15, 73, 1);
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: rgb(146, 255, 131);
     border-radius: 5px;
 }
