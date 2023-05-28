@@ -10,7 +10,7 @@ const ErrorInputsMessage = ({ networkError, inputError }) => {
         {(inputError instanceof PriceError) && <span> ❌ Error with Price. Must be a number.</span>}
       </div>)
   }
-  else if (networkError) return <span> ❌ Error with Network connection. Data is not saved.</span>
+  else if (networkError) return <div className="error-message-container"> <span> ❌ Error with Network connection. Data is not saved.</span></div>
   else return
 
 }

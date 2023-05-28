@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { useLocation } from "react-router-dom"
-import TextInputs from "../Components/TextInputs"
-import AddItemButton from "../Components/AddItemButton"
+import AddItem from "../Components/AddItem"
 const Restaurants = () => {
   const [data, setData] = useState({
     name: null,
@@ -15,8 +14,7 @@ const Restaurants = () => {
   return (
     <main className="main-routes-container">
       <h3 className="routes-title">Restaurants</h3>
-      <TextInputs data={data} setData={setData} />
-      <AddItemButton data={data} table={table} />
+      <AddItem data={data} setData={setData} table={table} />
     </main>)
 }
 
