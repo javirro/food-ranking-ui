@@ -2,14 +2,16 @@
     display: grid;
     grid-template-columns: 270px 120px;
     margin-left: 10px;
+    overflow-x: hidden;
 }
 
 .text-inputs {
     margin: 10px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     border: 1px solid lightgrey;
     color: rgb(71, 71, 71);
+    font-size: 1rem;
 }
 
 @media (max-width: 425px) {
@@ -18,10 +20,22 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        overflow-x: hidden;
         gap: 5px;
-        width: 80%;
-        padding: 10px 20px;
-        margin-top: 0px;
+        width: 88%;
+        padding: 10px 16px;
+        margin: 0px 10px 0px 8px;
+    }
+    .text-inputs {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .inputs-container {
+        width: 85%;
+        padding: 10px 15px;
+        margin: 0px 10px 0px 8px;
     }
     .text-inputs {
         width: 100%;

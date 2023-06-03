@@ -26,26 +26,13 @@
     background: #71d8bb;
 }
 
-@media (max-width: 425px) {
-    .save-btn-container {
-        padding: 5px;
-        margin-top: 0px;
-        margin-left: 0px;
-    }
-    .save-btn:active {
-        outline: 2px solid rgb(52, 124, 94);
-        background: #71d8bb;
-    }
-}
-
 .error-message-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
-    width: 80%;
-    padding: 5px;
+    padding: 5px 15px;
     color: rgb(115, 0, 0);
     font-size: 0.9rem;
     font-weight: bold;
@@ -58,11 +45,44 @@
     justify-content: center;
     align-items: center;
     margin-top: 15px;
-    width: 80%;
-    padding: 5px;
+    padding: 5px 15px;
     color: rgb(15, 73, 1);
     font-size: 0.9rem;
     font-weight: bold;
     background-color: rgb(146, 255, 131);
     border-radius: 5px;
+}
+
+@media (max-width: 425px) {
+    .save-btn-container {
+        width: 100%;
+        padding: 5px;
+        margin: 0px 0px;
+    }
+    .save-btn:active {
+        outline: 2px solid rgb(52, 124, 94);
+        background: #71d8bb;
+    }
+    .error-message-container {
+        align-items: flex-start;
+    }
+    .done-message {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 375px) {
+    .save-btn-container {
+        width: 100%;
+    }
+    .save-btn:active {
+        outline: 2px solid rgb(52, 124, 94);
+        background: #71d8bb;
+    }
+    .error-message-container {
+        align-items: flex-start;
+    }
+    .done-message {
+        align-items: flex-start;
+    }
 }
