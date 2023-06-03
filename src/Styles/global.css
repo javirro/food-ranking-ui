@@ -65,5 +65,10 @@
     .links {
         padding: 6px;
         font-size: 1rem;
+        text-align: start;
+    }
+    .links:active {
+        background: linear-gradient(rgb(196, 210, 210), rgb(117, 196, 164));
+        border: 3px solid rgb(76, 126, 128);
     }
 }
