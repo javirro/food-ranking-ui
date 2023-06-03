@@ -7,6 +7,7 @@ import '../Styles/ranking.css'
 import useFetch from "../Hooks/useFetch"
 import EditModal from "../Components/EditModal"
 import { headerGET } from "../Api/headers"
+import LoadingSpinner from "../Components/LoadingSpinner"
 
 const Ranking = () => {
   const { type } = useParams()
@@ -41,6 +42,7 @@ const Ranking = () => {
   return (
     <div className="ranking-container">
       {isEditModal && <EditModal table={type} row={rowToEdit} setIsEditModal={setIsEditModal} setTrigger={setTrigger} />}
+      {!loaded && <LoadingSpinner />}
       {!error && loaded && <table>
         <thead>
           <tr>
