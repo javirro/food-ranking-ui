@@ -8,6 +8,7 @@ const useFetch = ({ url, trigger, requestOptions }) => {
   useEffect(() => {
     if (trigger) {
       setLoaded(false)
+      setError(undefined)
       fetch(url, requestOptions)
         .then((res) => {
           if (res.ok) return res.json()
