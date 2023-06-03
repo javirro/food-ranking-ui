@@ -17,7 +17,21 @@
 }
 
 .button-update {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 100%;
-    padding: 5px;
+    padding: 6px;
+    border: 2px solid rgb(40, 112, 82);
+    background: #48a288;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+}
+
+.button-update:hover {
+    border: 2px solid rgb(24, 71, 51);
+    background: #118c0b;
+}
+
+.button-update:active {
+    border: 2px solid rgb(24, 71, 51);
+    background: #118c0b;
 }
