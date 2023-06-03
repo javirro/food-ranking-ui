@@ -7,7 +7,6 @@ const Burgers = () => {
     position: null,
     ubication: null,
     price: null,
-    extra: null
   })
   const location = useLocation()
   const table = location.pathname.slice(1)

@@ -14,7 +14,6 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
     position: row?.position,
     ubication: row?.ubication,
     price: row?.price,
-    extra: row?.extra
   })
   const url = endpoints.update
   const updateRow = () => {
@@ -57,7 +56,6 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
           <input type="text" value={data?.position} onChange={(ev) => setData(s => ({ ...s, position: ev.target.value }))} placeholder="Position" className="inputs-edit-modal" />
           <input type="text" value={data?.ubication} onChange={(ev) => setData(s => ({ ...s, ubication: ev.target.value }))} placeholder="Ubication" className="inputs-edit-modal" />
           <input type="text" value={`${data?.price} €`} onChange={(ev) => setData(s => ({ ...s, price: ev.target.value }))} placeholder="Price" className="inputs-edit-modal" />
-          <textarea type="text" value={data?.extra} onChange={(ev) => setData(s => ({ ...s, extra: ev.target.value }))} placeholder="Extra comments" className="inputs-edit-modal" maxLength={256} />
           <button className="button-update" onClick={() => updateRow()}>Update - {row.name}</button>
         </section>
       </div>

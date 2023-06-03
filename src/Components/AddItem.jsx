@@ -53,11 +53,10 @@ const AddItem = ({ data, setData, table }) => {
         <input type="text" onChange={(ev) => textInputChange(ev, "position")} placeholder="Position" className="text-inputs" />
         <input type="text" onChange={(ev) => textInputChange(ev, "ubication")} placeholder="Ubication" className="text-inputs" />
         <input type="text" onChange={(ev) => textInputChange(ev, "price")} placeholder="Price" className="text-inputs" />
-        <textarea type="text" onChange={(ev) => textInputChange(ev, "extra")} placeholder="Extra comments" className="text-inputs" maxLength={256} />
       </section>
       <section className="save-btn-container">
         <button className="save-btn" onClick={addItemHandler}>Save data</button>
-        {loaded && <DoneInputsMessage data={data} />}
+        {loaded && !inputError && !networkError && <DoneInputsMessage data={data} />}
         {(inputError || networkError) && <ErrorInputsMessage networkError={networkError} inputError={inputError} />}
       </section>
     </>

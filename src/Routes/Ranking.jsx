@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from "react"
 import { useParams } from "react-router-dom"
 import { endpoints } from "../Api/endpoints"
-import info from '../Images/info-icon.svg'
 import rubbish from '../Images/rubbish-icon.svg'
 import edit from '../Images/edit-icon.svg'
 import '../Styles/ranking.css'
@@ -59,7 +58,6 @@ const Ranking = () => {
                 <td>{row?.name}</td>
                 <td>{row?.ubication}</td>
                 <td >
-                  <img src={info} alt="info-icon" className="info-icon" />
                   <img src={edit} alt="edit-icon" className="edit-icon" onClick={() => editItem(row)} />
                   <img src={rubbish} alt="delete-icon" className="info-icon" onClick={() => deleteItem(row)} />
                 </td>
