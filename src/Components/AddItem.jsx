@@ -15,6 +15,8 @@ const AddItem = ({ data, setData, table }) => {
 
   const textInputChange = (ev, key) => {
     if (loaded) setLoaded(false)
+    if (inputError) setInputError(undefined)
+    if (networkError) setNetworkError(undefined)
     setData(s => ({ ...s, [key]: ev.target.value }))
   }
 

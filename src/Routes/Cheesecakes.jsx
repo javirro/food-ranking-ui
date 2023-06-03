@@ -8,7 +8,6 @@ const Cheesecakes = () => {
     position: undefined,
     ubication: undefined,
     price: undefined,
-    extra: undefined
   })
   const location = useLocation()
   const table = location.pathname.slice(1)
