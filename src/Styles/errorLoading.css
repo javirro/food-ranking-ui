@@ -1,0 +1,15 @@
+.error-loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 250px;
+    height: 70px;
+    padding: 3px 10px;
+    background-color: rgb(171, 8, 41);
+    border: none;
+    border-radius: 5px;
+    color: rgb(253, 178, 178);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
