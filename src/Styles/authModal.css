@@ -1,0 +1,8 @@
+.text-user-authorized {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: darkgreen
+}

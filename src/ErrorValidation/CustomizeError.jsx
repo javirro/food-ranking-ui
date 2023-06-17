@@ -16,3 +16,4 @@ const createErrorFactory = function (name) {
 
 export const PositionError = createErrorFactory("PositionError")
 export const PriceError = createErrorFactory("PriceError")
+export const UserError = createErrorFactory("UserError")
