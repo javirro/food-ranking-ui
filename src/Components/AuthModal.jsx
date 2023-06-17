@@ -6,7 +6,7 @@ import '../Styles/authModal.css'
 import '../Styles/modal.css'
 
 
-const AuthModal = ({ setIsAuthModal, setTrigger }) => {
+const AuthModal = ({ setIsAuthModal }) => {
   const [userData, setUserData] = useState({
     user: undefined,
     password: undefined
@@ -17,27 +17,24 @@ const AuthModal = ({ setIsAuthModal, setTrigger }) => {
     try {
       validateUserInput(userData)
     } catch (e) {
-      if (e instanceof UserError) setTrigger(false)
+      if (e instanceof UserError)
       return
     }
 
     const requestOptions = {
-      method: "GET",
+      method: "POST",
       headers: {
-        authorization: {
-          user: userData.user,
-          password: userData.password
-        }
+        'Access-Control-Allow-Origin': "*",
+        "authorization": `${userData.user}:${userData.password}`
       },
     }
-    setTrigger(false)
     fetch(url, requestOptions)
       .then((res) => {
         if (res.ok) return res.json()
       })
       .then((data) => {
         if (data) {
-          window.localStorage.setItem("token", data.token)
+         window.localStorage.setItem("token", data.token)
           setToken(data.token)
         }
       })
