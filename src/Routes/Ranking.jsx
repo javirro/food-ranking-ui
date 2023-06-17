@@ -20,7 +20,6 @@ const Ranking = () => {
   const requestOptions = useMemo(() => {
     const options = {
       method: "GET",
-      mode: "no-cors",
       headers: headerGET,
     }
     return options
