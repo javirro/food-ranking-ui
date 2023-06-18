@@ -26,6 +26,13 @@
     background: #71d8bb;
 }
 
+.save-btn:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    outline: none;
+}
+
 .error-message-container {
     display: flex;
     flex-direction: column;

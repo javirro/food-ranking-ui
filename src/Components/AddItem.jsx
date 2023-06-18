@@ -57,7 +57,7 @@ const AddItem = ({ data, setData, table }) => {
         <input type="text" onChange={(ev) => textInputChange(ev, "price")} placeholder="Price" className="text-inputs" />
       </section>
       <section className="save-btn-container">
-        <button className="save-btn" onClick={addItemHandler}>Save data</button>
+        <button className="save-btn" disabled = {window.localStorage.getItem("token") ? false: true }onClick={addItemHandler}>Save data</button>
         {loaded && !inputError && !networkError && <DoneInputsMessage data={data} />}
         {(inputError || networkError) && <ErrorInputsMessage networkError={networkError} inputError={inputError} />}
       </section>
