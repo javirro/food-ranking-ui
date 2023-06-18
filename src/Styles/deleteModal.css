@@ -1,0 +1,30 @@
+#modal-content-delete {
+    width: 350px;
+    height: 120px;
+    border-radius: 10px;
+    background: rgb(252, 176, 176);
+}
+
+.btn-delete {
+    margin-top: 15px;
+    width: 100%;
+    padding: 6px;
+    border: 2px solid rgb(129, 1, 1);
+    border-radius: 5px;
+    background: #ff0b0b;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 0.6px;
+    color: rgb(249, 249, 249);
+}
+
+.btn-delete:hover {
+    color: rgb(249, 249, 249);
+    background: #af0404;
+}
+
+.close-delete {
+    background-color: rgb(252, 176, 176);
+    color: rgb(62, 62, 62);
+    ;
+}

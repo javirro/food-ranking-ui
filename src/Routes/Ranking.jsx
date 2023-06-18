@@ -9,11 +9,13 @@ import EditModal from "../Components/EditModal"
 import { headerGET } from "../Api/headers"
 import LoadingSpinner from "../Components/LoadingSpinner"
 import ErrorLoadingData from "../Components/ErrorLoadingData"
+import DeleteModal from "../Components/DeleteModal"
 
 const Ranking = () => {
   const { type } = useParams()
   const [trigger, setTrigger] = useState(true) // To refresh data once the item has been deleted
   const [isEditModal, setIsEditModal] = useState(false)
+  const [isDeleteModal, setIsDeleteModal] = useState(false)
   const [rowToEdit, setRowToEdit] = useState(null)
   const url = `${endpoints.get}?table=${type}`
 
@@ -29,10 +31,8 @@ const Ranking = () => {
 
   const deleteItem = async (row) => {
     setTrigger(false)
-    fetch(`${endpoints.delete}?table=${type}&id=${row?.id}&position=${row?.position}`)
-      .then(res => res.json())
-      .then(data => data)
-      .finally(() => setTrigger(true))
+    setIsDeleteModal(true)
+    setRowToEdit(row)
   }
 
   const editItem = (row) => {
@@ -43,6 +43,7 @@ const Ranking = () => {
   return (
     <div className="ranking-container">
       {isEditModal && <EditModal table={type} row={rowToEdit} setIsEditModal={setIsEditModal} setTrigger={setTrigger} />}
+      {isDeleteModal && <DeleteModal table={type} row={rowToEdit} setIsDeleteModal={setIsDeleteModal} setTrigger={setTrigger} />}
       {!loaded && <LoadingSpinner />}
       {error && <ErrorLoadingData />}
       {loaded && !error && <table>
