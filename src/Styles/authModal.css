@@ -7,3 +7,13 @@
     font-weight: bold;
     color: darkgreen
 }
+
+.header-auth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 10px;
+    gap: 10px;
+}

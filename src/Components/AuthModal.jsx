@@ -21,7 +21,7 @@ const AuthModal = ({ setIsAuthModal }) => {
     try {
       validateUserInput(userData)
     } catch (e) {
-      if (e instanceof UserError) setError(UserError)
+      if (e instanceof UserError) setError(new UserError())
       return
     }
 
@@ -56,7 +56,8 @@ const AuthModal = ({ setIsAuthModal }) => {
   return (
     <div className="modal">
       <div className="modal-content" >
-        <header>
+        <header className="header-auth">
+          <h3>Authorization control</h3>
           <button onClick={() => setIsAuthModal(false)}>Close</button>
         </header>
         {!token && <section className="section-inputs-modal">
