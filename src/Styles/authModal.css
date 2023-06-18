@@ -1,6 +1,7 @@
 .text-user-authorized {
-    display: block;
+    display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;

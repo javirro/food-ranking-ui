@@ -1,23 +1,27 @@
 import { useState } from 'react'
 import { endpoints } from '../Api/endpoints'
 import { validateUserInput } from '../ErrorValidation/validator'
-import { UserError } from '../ErrorValidation/CustomizeError'
+import { AuthError, UserError } from '../ErrorValidation/CustomizeError'
 import '../Styles/authModal.css'
 import '../Styles/modal.css'
+import ErrorInputsMessage from './ErrorInputsMessage'
 
 
 const AuthModal = ({ setIsAuthModal }) => {
-  const [userData, setUserData] = useState({
-    user: undefined,
-    password: undefined
-  })
+  const TIME_TO_WAIT_TO_CLOSE_MODAL = 4000
+  const [userData, setUserData] = useState({ user: undefined, password: undefined })
   const [token, setToken] = useState(window.localStorage.getItem("token"))
+  const [error, setError] = useState(undefined)
+  const [networkError, setNetworkError] = useState(undefined)
   const url = endpoints.auth
+
   const updateRow = () => {
+    setError(undefined)
+    setNetworkError(undefined)
     try {
       validateUserInput(userData)
     } catch (e) {
-      if (e instanceof UserError)
+      if (e instanceof UserError) setError(UserError)
       return
     }
 
@@ -31,18 +35,21 @@ const AuthModal = ({ setIsAuthModal }) => {
     fetch(url, requestOptions)
       .then((res) => {
         if (res.ok) return res.json()
+        else setError(new AuthError("Not Authorized"))
       })
       .then((data) => {
         if (data) {
-         window.localStorage.setItem("token", data.token)
-          setToken(data.token)
+          window.localStorage.setItem("token", data)
+          setToken(data)
+          setError(undefined)
+          setNetworkError(undefined)
         }
       })
-      .catch((e) => console.error(e))
+      .catch(e => setNetworkError(e))
       .finally(async () => {
         setTimeout(() => {
-          setIsAuthModal(false)
-        }, 4000)
+          setIsAuthModal(window.localStorage.getItem("token") ? false : true)
+        }, TIME_TO_WAIT_TO_CLOSE_MODAL)
       })
   }
 
@@ -57,7 +64,8 @@ const AuthModal = ({ setIsAuthModal }) => {
           <input type="password" value={userData?.password} onChange={(ev) => setUserData(s => ({ ...s, password: ev.target.value }))} placeholder="Password" className="inputs-edit-modal" />
           <button className="button-update" onClick={() => updateRow()}>Request Authorization</button>
         </section>}
-        {token && <p className='text-user-authorized'>User Authorized!</p>}
+        {token != null && <p className='text-user-authorized'> ✅ User Authorized!</p>}
+        {(error || networkError) && <ErrorInputsMessage authError={error} networkError={networkError} />}
       </div>
     </div>)
 }
