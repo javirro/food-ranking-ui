@@ -1,0 +1,21 @@
+#modal-content-not-auth {
+    height: 120px;
+    background: rgb(252, 176, 176);
+}
+
+.not-authorized {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: darkred;
+}
+
+#close-not-authorized {
+    background-color: rgb(252, 176, 176);
+    color: rgb(62, 62, 62);
+}
+
+#close-not-authorized:hover {
+    background-color: rgb(152, 149, 149);
+}

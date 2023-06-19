@@ -3,8 +3,10 @@ import { endpoints } from '../Api/endpoints'
 import { headerPOST } from '../Api/headers'
 import { validatePosition } from '../ErrorValidation/validator'
 import { InputError } from '../ErrorValidation/CustomizeError'
+import NotAuthorized from './NotAuthorized'
 import '../Styles/editModal.css'
 import '../Styles/modal.css'
+
 
 
 const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
@@ -18,19 +20,7 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
   const url = endpoints.update
   const token = window.localStorage.getItem("token")
 
-  if(!token) {
-    return (
-      <div className="modal">
-        <div id="modal-content-not-auth" >
-          <header>
-            <button onClick={() => setIsEditModal(false)}>Close</button>
-          </header>
-          <section className="section-inputs-modal">
-            <span className='not-authorized'> ⛔ You are not authorized to edit info.</span>
-          </section>
-        </div>
-      </div>)
-  }
+  if(!token) return <NotAuthorized operation={"edit"} setIsModal={setIsEditModal} />
   const updateRow = () => {
     try {
       validatePosition(data.position)
