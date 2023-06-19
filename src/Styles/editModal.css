@@ -39,3 +39,13 @@
     border: 2px solid rgb(24, 71, 51);
     background: #118c0b;
 }
+
+#modal-content-not-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    height: 120px;
+    border-radius: 10px;
+    background: rgb(114, 250, 195);
+}

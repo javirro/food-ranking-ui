@@ -16,6 +16,21 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
     price: row?.price,
   })
   const url = endpoints.update
+  const token = window.localStorage.getItem("token")
+
+  if(!token) {
+    return (
+      <div className="modal">
+        <div id="modal-content-not-auth" >
+          <header>
+            <button onClick={() => setIsEditModal(false)}>Close</button>
+          </header>
+          <section className="section-inputs-modal">
+            <span className='not-authorized'> ⛔ You are not authorized to edit info.</span>
+          </section>
+        </div>
+      </div>)
+  }
   const updateRow = () => {
     try {
       validatePosition(data.position)
@@ -23,6 +38,8 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
       if (e instanceof InputError) setTrigger(false)
       return
     }
+
+    headerPOST.token = token
 
     const requestOptions = {
       method: "POST",

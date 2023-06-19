@@ -28,3 +28,11 @@
     color: rgb(62, 62, 62);
     ;
 }
+
+.not-authorized {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: darkred;
+}
