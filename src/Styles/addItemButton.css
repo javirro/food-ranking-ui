@@ -52,13 +52,14 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
     padding: 5px 15px;
     color: rgb(15, 73, 1);
     font-size: 0.9rem;
     font-weight: bold;
-    background-color: rgb(146, 255, 131);
+    background-color: rgb(63, 191, 140);
     border-radius: 5px;
+    width: 350px;
 }
 
 @media (max-width: 425px) {
@@ -76,6 +77,8 @@
     }
     .done-message {
         align-items: flex-start;
+        margin-top: 20px;
+        width: 300px;
     }
 }
 
@@ -92,5 +95,6 @@
     }
     .done-message {
         align-items: flex-start;
+        width: 300px;
     }
 }
