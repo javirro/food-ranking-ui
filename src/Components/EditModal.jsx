@@ -36,6 +36,7 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
       headers: headerPOST,
       body: JSON.stringify({
         table,
+        name: data.name,
         id: data.id,
         position: data.position
       })
