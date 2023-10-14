@@ -4,5 +4,6 @@ export const endpoints = {
   add: baseURL + "add-item",
   delete: baseURL + "delete-item",
   get: baseURL + "get-all-items",
-  update: baseURL + "update-item"
-}
+  update: baseURL + "update-item",
+  examples: baseURL + "examples",
+};
