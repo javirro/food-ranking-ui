@@ -18,9 +18,9 @@ const Restaurants = () => {
   const clickHandler = () => {
     fetch(endpoints.examples, {
       method: "GET",
-      // headers: {
-      //   "x-function-key": "LTwViSoqJ9yJlZjSYMLHAAQIk937h07Mf9yO5rboRzP2AzFuyFTWKQ=="
-      // }
+      headers: {
+        "x-function-key": "LTwViSoqJ9yJlZjSYMLHAAQIk937h07Mf9yO5rboRzP2AzFuyFTWKQ=="
+      }
     })
       .then(res => res.json())
       .then(console.log)
