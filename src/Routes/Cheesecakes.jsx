@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useLocation } from "react-router-dom"
 import AddItem from "../Components/AddItem"
 import AuthModal from "../Components/AuthModal"
+import '../Styles/global.css'
 
 const Cheesecakes = () => {
   const [data, setData] = useState({

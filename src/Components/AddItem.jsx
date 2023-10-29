@@ -51,13 +51,17 @@ const AddItem = ({ data, setData, table }) => {
   return (
     <>
       <section className="inputs-container">
+        <label className="labels-inputs">Restaurant name</label>
         <input type="text" onChange={(ev) => textInputChange(ev, "name")} placeholder="Restaurant Name" className="text-inputs" maxLength={120} />
+        <label className="labels-inputs">Position in ranking</label>
         <input type="text" onChange={(ev) => textInputChange(ev, "position")} placeholder="Position" className="text-inputs" />
+        <label className="labels-inputs">Ubication</label>
         <input type="text" onChange={(ev) => textInputChange(ev, "ubication")} placeholder="Ubication" className="text-inputs" />
-        <input type="text" onChange={(ev) => textInputChange(ev, "price")} placeholder="Price" className="text-inputs" />
+        <label className="labels-inputs">Price</label>
+        <input type="text" onChange={(ev) => textInputChange(ev, "price")} placeholder="Price (€)" className="text-inputs" />
       </section>
       <section className="save-btn-container">
-        <button className="save-btn" disabled = {window.localStorage.getItem("token") ? false: true }onClick={addItemHandler}>Save data</button>
+        <button className="save-btn" disabled={window.localStorage.getItem("token") ? false : true} onClick={addItemHandler}>Save data</button>
         {loaded && !inputError && !networkError && <DoneInputsMessage data={data} />}
         {(inputError || networkError) && <ErrorInputsMessage networkError={networkError} inputError={inputError} />}
       </section>
