@@ -41,6 +41,7 @@
   border-radius: 4px;
   letter-spacing: 0.2px;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .close-edit-modal-btn:hover {
@@ -92,6 +93,7 @@
   font-size: 0.95rem;
   letter-spacing: 0.6px;
   color: rgb(2, 2, 2);
+  cursor: pointer;
 }
 
 .button-update:hover {

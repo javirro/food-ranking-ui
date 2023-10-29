@@ -37,6 +37,7 @@
   font-size: 0.95rem;
   letter-spacing: 0.6px;
   color: rgb(249, 249, 249);
+  cursor: pointer;
 }
 
 .btn-delete:hover {
@@ -45,6 +46,8 @@
 }
 
 .close-delete {
-  background-color: rgb(252, 176, 176);
+  background-color: transparent;
   color: rgb(62, 62, 62);
+  border: 3px solid rgb(62, 62, 62);
+  cursor: pointer;
 }

@@ -21,6 +21,7 @@
     letter-spacing: 0.6px;
     color: rgb(245, 255, 245);
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .save-btn:hover {
