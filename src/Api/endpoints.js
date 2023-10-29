@@ -7,3 +7,7 @@ export const endpoints = {
   update: baseURL + "update-item",
   examples: baseURL + "examples",
 };
+
+
+// http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
+export const GEOCODING_BASE_URl = "http://api.openweathermap.org/geo/1.0/direct?";

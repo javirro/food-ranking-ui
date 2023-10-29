@@ -5,10 +5,10 @@ import Burgers from "./Routes/Burgers"
 import Restaurants from "./Routes/Restaurants"
 import NavBar from "./Routes/NavBar"
 import Ranking from "./Routes/Ranking"
-import './Styles/global.css'
+import Map from "./Routes/Map";
+import "./Styles/global.css";
 
 function App() {
-
   return (
     <div>
       <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="/ranking/:type" element={<Ranking />} />
+            <Route path="/map/:type" element={<Map />} />
           </Route>
           <Route path="/cheesecakes" element={<Cheesecakes />} />
           <Route path="/burgers" element={<Burgers />} />
@@ -23,8 +24,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-
-  )
+  );
 }
 
 export default App;
