@@ -2,7 +2,6 @@
 import { endpoints } from '../Api/endpoints'
 import NotAuthorized from './NotAuthorized'
 import '../Styles/deleteModal.css'
-import '../Styles/modal.css'
 
 
 const DeleteModal = ({ table, row, setIsDeleteModal, setTrigger }) => {
@@ -20,12 +19,12 @@ const DeleteModal = ({ table, row, setIsDeleteModal, setTrigger }) => {
   }
   if (!token) return <NotAuthorized operation={"delete"} setIsModal={setIsDeleteModal} />
   return (
-    <div className="modal">
-      <div id="modal-content-delete" className="modal-content" >
-        <header>
+    <div className="modal-delete">
+      <div className="modal-delete-content" >
+        <header className="modal-delete-header">
           <button onClick={() => setIsDeleteModal(false)} className="close-delete">Close</button>
         </header>
-        <section className="section-inputs-modal">
+        <section className="delete-section">
           <button className="btn-delete" onClick={() => deleteItem()}>Delete - {row.name}</button>
         </section>
       </div>
