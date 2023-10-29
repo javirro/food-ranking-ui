@@ -54,11 +54,11 @@ const AuthModal = ({ setIsAuthModal }) => {
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content" >
+    <div className="modal-auth">
+      <div className="modal-auth-content" >
         <header className="header-auth">
           <h3>Authorization control</h3>
-          <button onClick={() => setIsAuthModal(false)}>Close</button>
+          <button onClick={() => setIsAuthModal(false)} className="close-auth-btn">Close</button>
         </header>
         {!token && <section className="section-inputs-modal">
           <input type="text" value={userData.user} onChange={(ev) => setUserData(s => ({ ...s, user: ev.target.value }))} placeholder="User Name" className="inputs-edit-modal" maxLength={60} />

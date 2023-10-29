@@ -3,23 +3,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 500px;
     margin-top: 10px;
     margin-left: 10px;
     padding: 10px;
 }
 
 .save-btn {
-    width: 180px;
+    width: 250px;
     padding: 7px 5px;
     border-radius: 5px;
     border: none;
     outline: 2px solid rgb(26, 79, 57);
+    box-shadow: inset 0px 0px 10px rgb(66, 105, 89);
     background: #2daf8a;
     font-weight: bold;
     letter-spacing: 0.6px;
     color: rgb(245, 255, 245);
-    font-size: 0.95rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .save-btn:hover {

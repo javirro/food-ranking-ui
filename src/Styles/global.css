@@ -1,78 +1,83 @@
+
 .routes-title {
-    margin-bottom: 10px;
-    margin-left: 20px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  font-size: 1.8rem;
+  letter-spacing: 1.4px;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 0px 4px rgb(119, 194, 241);
 }
 
 .home-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .links {
-    display: inline-block;
-    width: 220px;
-    padding: 20px;
-    border-radius: 6px;
-    border: 3px solid cadetblue;
-    background: linear-gradient(rgb(237, 250, 250), rgb(147, 218, 190));
-    text-decoration: none;
-    text-align: center;
-    color: black;
-    font-weight: 600;
-    letter-spacing: 0.8px;
+  display: inline-block;
+  width: 220px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 3px solid cadetblue;
+  background: linear-gradient(rgb(237, 250, 250), rgb(147, 218, 190));
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 0.8px;
 }
 
 .links:hover {
-    background: linear-gradient(rgb(196, 210, 210), rgb(117, 196, 164));
-    border: 3px solid rgb(76, 126, 128);
+  background: linear-gradient(rgb(196, 210, 210), rgb(117, 196, 164));
+  border: 3px solid rgb(76, 126, 128);
 }
 
 @media (min-width: 600px) {
-    .main-routes-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .routes-title {
-        text-align: center;
-        margin-bottom: 0px;
-        margin-left: 0px;
-    }
+  .main-routes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .routes-title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
 }
 
 @media (max-width: 425px) {
-    .routes-title {
-        text-align: center;
-        margin-bottom: 0px;
-        margin-left: 0px;
-    }
-    .links {
-        margin-top: 8px;
-        padding: 5px;
-    }
+  .routes-title {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  .links {
+    margin-top: 8px;
+    padding: 5px;
+  }
 }
 
 @media (max-width: 600px) {
-    .home-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 6px;
-        margin-top: 10px;
-    }
-    .links {
-        padding: 6px;
-        font-size: 1rem;
-        text-align: start;
-    }
-    .links:active {
-        background: linear-gradient(rgb(196, 210, 210), rgb(117, 196, 164));
-        border: 3px solid rgb(76, 126, 128);
-    }
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .links {
+    padding: 6px;
+    font-size: 1rem;
+    text-align: start;
+  }
+  .links:active {
+    background: linear-gradient(rgb(196, 210, 210), rgb(117, 196, 164));
+    border: 3px solid rgb(76, 126, 128);
+  }
 }
