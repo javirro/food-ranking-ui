@@ -62,7 +62,9 @@ const Map = () => {
   const mapCenterMadrid = [40.31, -3.48]
 
   if (error) {
-    return <span> Error loading data </span>
+    return (<div className="error-div-map">
+      <span> Error loading data </span>
+    </div>)
   }
   if (!loaded || !geoData) return <LoadingSpinner />
 

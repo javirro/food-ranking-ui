@@ -13,6 +13,16 @@
   border-radius: 6px;
 }
 
+.error-div-map {
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
 @media (max-width: 425px) {
   .map {
