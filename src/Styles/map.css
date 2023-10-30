@@ -1,0 +1,29 @@
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.map {
+  height: 500px;
+  width: 500px;
+  border: 3px solid darkgreen;
+  border-radius: 6px;
+}
+
+
+@media (max-width: 425px) {
+  .map {
+  height: 400px;
+  width: 370px;
+}
+}
+
+@media (max-width: 375px) {
+  .map {
+  height: 400px;
+  width: 345px;
+}
+}

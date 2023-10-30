@@ -6,6 +6,8 @@ import CustomMarker from '../Components/Maps/CustomMarker';
 import { useParams } from 'react-router';
 import { headerGET } from '../Api/headers';
 import useFetch from '../Hooks/useFetch';
+import LoadingSpinner from '../Components/LoadingSpinner'
+import '../Styles/map.css'
 
 const Map = () => {
   const { type } = useParams()
@@ -22,8 +24,7 @@ const Map = () => {
   const { result, loaded, error } = useFetch({ url, requestOptions, trigger: true })
 
 
-
-  const [geoData, setGeoData] = useState([]);
+  const [geoData, setGeoData] = useState(undefined);
 
   useEffect(() => {
 
@@ -33,10 +34,19 @@ const Map = () => {
         const cities = result.map(item => item.ubication)
         const citiesWIthoutDuplicated = [...new Set(cities)]
         const promises = citiesWIthoutDuplicated?.map(async (item) => {
-          const res = await fetch(GEOCODING_BASE_URl + `q=${item?.ubication}&appid=${apiKey}`);
-          const data = await res.json();
-          if (data.length > 0) return { name: item.ubication, position: [data[0].lon, data[0].lat] };
-          else return undefined;
+          if (!window.localStorage.getItem(item)) {
+            const res = await fetch(GEOCODING_BASE_URl + `q=${item}&appid=${apiKey}`);
+            const data = await res.json();
+            if (data.length > 0) {
+              window.localStorage.setItem(item, JSON.stringify({ lon: data[0].lon, lat: data[0].lat }))
+              return { name: item, position: [data[0].lon, data[0].lat] };
+            }
+            else return undefined;
+          } else {
+            const storageData = JSON.parse(window.localStorage.getItem(item))
+            return { name: item, position: [storageData.lat, storageData.lon] }
+          }
+
         });
 
         const resolvedGeoData = await Promise.all(promises);
@@ -49,23 +59,24 @@ const Map = () => {
     fetchData();
   }, [loaded, result]);
 
-
-  console.log("geo data", geoData)
-  const position = [51.505, -0.09]
+  const mapCenterMadrid = [40.31, -3.48]
 
   if (error) {
     return <span> Error loading data </span>
   }
+  if (!loaded || !geoData) return <LoadingSpinner />
 
   return (
-    <MapContainer center={position} zoom={2} style={{ height: '400px', width: '400px' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {geoData.map(data => <CustomMarker position={data.position} />)}
+    <section className="map-container">
+      <MapContainer center={mapCenterMadrid} zoom={5} className="map">
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {geoData?.map(data => <CustomMarker position={data.position} name={data.name} key={data.name} />)}
 
-    </MapContainer>
+      </MapContainer>
+    </section>
   )
 }
 
