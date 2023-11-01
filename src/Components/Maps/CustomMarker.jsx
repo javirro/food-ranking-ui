@@ -3,14 +3,14 @@ import '../../../node_modules/leaflet/dist/leaflet.css';
 import L from "leaflet"
 import pointer from '../../Images/pointer.svg'
 
-const CustomMarker = ({ position, name }) => {
+const CustomMarker = ({ lat, lon, name }) => {
   const customIcon = new L.Icon({
     iconUrl: pointer,
     iconSize: [20, 20], // Adjust the size as needed
   });
 
   return (
-    <Marker position={position} icon={customIcon} >
+    <Marker position={[lat, lon]} icon={customIcon} >
       <Popup> {name} </Popup>
     </Marker>
   )

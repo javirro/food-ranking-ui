@@ -6,6 +6,7 @@ export const endpoints = {
   get: baseURL + "get-all-items",
   update: baseURL + "update-item",
   examples: baseURL + "examples",
+  ubication: baseURL + "get-ubications",
 };
 
 
