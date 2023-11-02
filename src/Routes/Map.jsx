@@ -23,25 +23,25 @@ const Map = () => {
 
 
   const { result, loaded, error } = useFetch({ url, requestOptions, trigger: trigger })
-  console.log(result)
+  console.log("trigger", trigger)
 
   useEffect(() => {
-    if (loaded) setTrigger(false)
-  }, [loaded, type])
+    setTrigger(s => !s)
+  }, [type])
 
 
   const mapCenterMadrid = [40.31, -3.48]
 
   if (error) {
     return (<div className="error-div-map">
-      <span> Error loading data </span>
+      <span className="text-error-map"> Error loading data </span>
     </div>)
   }
   if (!loaded || !result) return <LoadingSpinner />
 
   return (
     <section className="map-container">
-      <span>{type}</span>
+      <span className="title-type-map">Map {type}</span>
       <MapContainer center={mapCenterMadrid} zoom={5} className="map">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -1,9 +1,11 @@
 .map-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 50px;
+  gap: 10px;
+  margin-top: 25px;
+  min-height: 100vh;
 }
 
 .map {
@@ -14,11 +16,21 @@
 }
 
 .error-div-map {
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.text-error-map {
   color: red;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.title-type-map {
+  color: rgb(0, 0, 0);
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 1px;
@@ -26,14 +38,14 @@
 
 @media (max-width: 425px) {
   .map {
-  height: 400px;
-  width: 370px;
-}
+    height: 375px;
+    width: 350px;
+  }
 }
 
 @media (max-width: 375px) {
   .map {
-  height: 400px;
-  width: 345px;
-}
+    height: 400px;
+    width: 345px;
+  }
 }
