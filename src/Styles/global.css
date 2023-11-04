@@ -39,6 +39,33 @@
   letter-spacing: 0.8px;
 }
 
+.animation-link-1 {
+  animation: faceIn 1s;
+}
+
+.animation-link-2 {
+  animation: faceIn 2s;
+}
+
+.animation-link-3 {
+  animation: faceIn 3s;
+}
+
+.animation-link-4 {
+  animation: faceIn 4s;
+}
+
+@keyframes faceIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+  
+}
+
 .links:hover {
   background: linear-gradient(rgb(196, 210, 210), rgb(117, 196, 164));
   border: 3px solid rgb(76, 126, 128);
