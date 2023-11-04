@@ -1,4 +1,4 @@
-@import url('global.css');
+@import url("global.css");
 .inputs-container {
   display: flex;
   flex-direction: column;
@@ -30,15 +30,11 @@
     justify-content: center;
     align-items: flex-start;
     overflow-x: hidden;
-    width: 100%;
     gap: 5px;
-    padding: 10px 5px 10px 20px;
-    margin: 0px 5px 0px 5px;
   }
   .labels-inputs {
     font-size: 1rem;
     font-weight: bold;
-    color: rgb(41, 43, 43);
     text-align: left;
   }
   .text-inputs {
