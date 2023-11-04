@@ -6,6 +6,7 @@
 .global {
   min-height: 100vh;
   background: linear-gradient(to bottom, #153232, #014141);
+  padding-bottom: 40px;
 }
 
 .routes-title {
@@ -63,7 +64,6 @@
   to {
     opacity: 1;
   }
-  
 }
 
 .links:hover {
@@ -87,8 +87,7 @@
 }
 
 @media (max-width: 425px) {
-
-   .main-routes-container {
+  .main-routes-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
