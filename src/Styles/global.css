@@ -1,11 +1,19 @@
 
+:root {
+  --main-title-color: #4afef0;
+}
+.global {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #153232, #014141);
+}
+
+
 .routes-title {
   margin-bottom: 30px;
   margin-left: 20px;
-  font-size: 1.8rem;
-  letter-spacing: 1.4px;
-  color: rgb(0, 0, 0);
-  text-shadow: 0px 0px 4px rgb(119, 194, 241);
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+  color: var( --main-title-color);
 }
 
 .home-container {

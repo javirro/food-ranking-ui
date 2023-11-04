@@ -1,3 +1,4 @@
+@import url('global.css');
 .inputs-container {
   display: flex;
   flex-direction: column;
@@ -20,7 +21,7 @@
 .labels-inputs {
   font-size: 1rem;
   font-weight: bold;
-  color: rgb(41, 43, 43);
+  color: var(--main-title-color);
 }
 @media (max-width: 425px) {
   .inputs-container {
