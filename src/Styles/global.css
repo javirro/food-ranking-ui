@@ -1,6 +1,7 @@
 
 :root {
   --main-title-color: #4afef0;
+   --main-dark-color: #014141;
 }
 .global {
   min-height: 100vh;

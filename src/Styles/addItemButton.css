@@ -16,10 +16,10 @@
     border: none;
     outline: 2px solid rgb(26, 79, 57);
     box-shadow: inset 0px 0px 10px rgb(66, 105, 89);
-    background: #2daf8a;
+    background: var(--main-title-color);
     font-weight: bold;
     letter-spacing: 0.6px;
-    color: rgb(245, 255, 245);
+    color: var(--main-dark-color);
     font-size: 1.2rem;
     cursor: pointer;
 }
@@ -27,6 +27,7 @@
 .save-btn:hover {
     outline: 2px solid rgb(52, 124, 94);
     background: #71d8bb;
+    transform: scaleX(1.1);
 }
 
 .save-btn:disabled {
