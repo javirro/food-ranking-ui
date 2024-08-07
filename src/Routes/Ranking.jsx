@@ -3,13 +3,15 @@ import { useParams } from "react-router-dom"
 import { endpoints } from "../Api/endpoints"
 import rubbish from '../Images/rubbish-icon.svg'
 import edit from '../Images/edit-icon.svg'
-import '../Styles/ranking.css'
 import useFetch from "../Hooks/useFetch"
 import EditModal from "../Components/EditModal"
 import { headerGET } from "../Api/headers"
 import LoadingSpinner from "../Components/LoadingSpinner"
 import ErrorLoadingData from "../Components/ErrorLoadingData"
 import DeleteModal from "../Components/DeleteModal"
+
+import '../Styles/ranking.css'
+
 
 const Ranking = () => {
   const { type } = useParams()

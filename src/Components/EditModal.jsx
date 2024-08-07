@@ -50,6 +50,12 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
       .finally(() => setTrigger(true))
   }
 
+  const handleEdit = (ev) => {
+    const name = ev.target.name
+    const value = ev.target.value
+    setData(s => ({ ...s, [name]: value }))
+  }
+
   return (
     <div className="modal-edit">
       <div className="modal-edit-content" >
@@ -58,11 +64,11 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
         </header>
         <section className="section-inputs-modal">
           <label className="edit-modal-labels">Restaurant name</label>
-          <input type="text" value={data?.name} onChange={(ev) => setData(s => ({ ...s, name: ev.target.value }))} placeholder="Restaurant Name" className="inputs-edit-modal" maxLength={120} />
+          <input type="text" value={data?.name} onChange={handleEdit} placeholder="Restaurant Name" className="inputs-edit-modal" maxLength={120}   name="name"/>
           <label className="edit-modal-labels">Ranking position</label>
-          <input type="text" value={data?.position} onChange={(ev) => setData(s => ({ ...s, position: ev.target.value }))} placeholder="Position" className="inputs-edit-modal" />
+          <input type="text" value={data?.position} onChange={handleEdit} placeholder="Position" className="inputs-edit-modal" name="position"/>
           <label className="edit-modal-labels">Ubication</label>
-          <input type="text" value={data?.ubication} onChange={(ev) => setData(s => ({ ...s, ubication: ev.target.value }))} placeholder="Ubication" className="inputs-edit-modal" />
+          <input type="text" value={data?.ubication} onChange={handleEdit} placeholder="Ubication" className="inputs-edit-modal" name="ubication"/>
           {/* <input type="text" value={`${data?.price} €`} onChange={(ev) => setData(s => ({ ...s, price: ev.target.value }))} placeholder="Price" className="inputs-edit-modal" /> */}
           <button className="button-update" onClick={() => updateRow()}>Update - {row.name}</button>
         </section>

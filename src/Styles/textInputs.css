@@ -23,6 +23,7 @@
   font-weight: bold;
   color: var(--main-title-color);
 }
+
 @media (max-width: 425px) {
   .inputs-container {
     display: flex;

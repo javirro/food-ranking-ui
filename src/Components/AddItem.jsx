@@ -13,11 +13,13 @@ const AddItem = ({ data, setData, table }) => {
   const [networkError, setNetworkError] = useState(undefined)
   const url = endpoints.add
 
-  const textInputChange = (ev, key) => {
+  const textInputChange = (ev) => {
     if (loaded) setLoaded(false)
     if (inputError) setInputError(undefined)
     if (networkError) setNetworkError(undefined)
-    setData(s => ({ ...s, [key]: ev.target.value }))
+    const key = ev.target.name
+    const value = ev.target.value
+    setData(s => ({ ...s, [key]: value }))
   }
 
   const addItemHandler = () => {
@@ -52,13 +54,13 @@ const AddItem = ({ data, setData, table }) => {
     <>
       <section className="inputs-container">
         <label className="labels-inputs">Restaurant name</label>
-        <input type="text" onChange={(ev) => textInputChange(ev, "name")} placeholder="Restaurant Name" className="text-inputs" maxLength={120} />
+        <input type="text" onChange={textInputChange} placeholder="Restaurant Name" className="text-inputs" maxLength={120} name="name" />
         <label className="labels-inputs">Position in ranking</label>
-        <input type="text" onChange={(ev) => textInputChange(ev, "position")} placeholder="Position" className="text-inputs" />
+        <input type="text" onChange={textInputChange} placeholder="Position" className="text-inputs" name="position"/>
         <label className="labels-inputs">Ubication</label>
-        <input type="text" onChange={(ev) => textInputChange(ev, "ubication")} placeholder="Ubication" className="text-inputs" />
+        <input type="text" onChange={textInputChange} placeholder="Ubication" className="text-inputs" name="ubication" />
         <label className="labels-inputs">Price</label>
-        <input type="text" onChange={(ev) => textInputChange(ev, "price")} placeholder="Price (€)" className="text-inputs" />
+        <input type="text" onChange={textInputChange} placeholder="Price (€)" className="text-inputs"  name="price"/>
       </section>
       <section className="save-btn-container">
         <button className="save-btn" disabled={window.localStorage.getItem("token") ? false : true} onClick={addItemHandler}>Save data</button>
