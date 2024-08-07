@@ -53,14 +53,14 @@ const AddItem = ({ data, setData, table }) => {
   return (
     <>
       <section className="inputs-container">
-        <label className="labels-inputs">Restaurant name</label>
-        <input type="text" onChange={textInputChange} placeholder="Restaurant Name" className="text-inputs" maxLength={120} name="name" />
-        <label className="labels-inputs">Position in ranking</label>
-        <input type="text" onChange={textInputChange} placeholder="Position" className="text-inputs" name="position"/>
-        <label className="labels-inputs">Ubication</label>
-        <input type="text" onChange={textInputChange} placeholder="Ubication" className="text-inputs" name="ubication" />
-        <label className="labels-inputs">Price</label>
-        <input type="text" onChange={textInputChange} placeholder="Price (€)" className="text-inputs"  name="price"/>
+        <label>Restaurant name</label>
+        <input type="text" onChange={textInputChange} placeholder="Restaurant Name" maxLength={120} name="name" />
+        <label>Position in ranking</label>
+        <input type="text" onChange={textInputChange} placeholder="Position" name="position" />
+        <label >Ubication</label>
+        <input type="text" onChange={textInputChange} placeholder="Ubication" name="ubication" />
+        <label >Price</label>
+        <input type="text" onChange={textInputChange} placeholder="Price (€)" name="price" />
       </section>
       <section className="save-btn-container">
         <button className="save-btn" disabled={window.localStorage.getItem("token") ? false : true} onClick={addItemHandler}>Save data</button>

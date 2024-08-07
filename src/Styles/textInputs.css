@@ -5,9 +5,10 @@
   justify-content: center;
   align-items: flex-start;
   overflow-x: hidden;
+  
 }
 
-.text-inputs {
+.inputs-container input {
   width: 300px;
   margin-top: 3px;
   margin-bottom: 15px;
@@ -18,7 +19,7 @@
   font-size: 1rem;
 }
 
-.labels-inputs {
+.inputs-container label {
   font-size: 1rem;
   font-weight: bold;
   color: var(--main-title-color);
@@ -33,12 +34,12 @@
     overflow-x: hidden;
     gap: 5px;
   }
-  .labels-inputs {
+  .inputs-container label {
     font-size: 1rem;
     font-weight: bold;
     text-align: left;
   }
-  .text-inputs {
+  .inputs-container input {
     width: 300px;
   }
 }
@@ -53,12 +54,12 @@
     gap: 5px;
   }
 
-  .labels-inputs {
+  .inputs-container label {
     font-size: 1rem;
     font-weight: bold;
     text-align: left;
   }
-  .text-inputs {
+  .inputs-container input {
     width: 300px;
   }
 }
