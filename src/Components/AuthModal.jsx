@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { endpoints } from '../Api/endpoints'
 import { validateUserInput } from '../ErrorValidation/validator'
 import { AuthError, UserError } from '../ErrorValidation/CustomizeError'
+import ErrorInputsMessage from './ErrorInputsMessage'
 import '../Styles/authModal.css'
 import '../Styles/modal.css'
-import ErrorInputsMessage from './ErrorInputsMessage'
+
 
 
 const AuthModal = ({ setIsAuthModal }) => {
@@ -53,6 +54,11 @@ const AuthModal = ({ setIsAuthModal }) => {
       })
   }
 
+  const handleUserData = (ev) => {
+    const name = ev.target.name
+    const value = ev.target.value
+    setUserData(s => ({ ...s, [name]: value }))
+  }
   return (
     <div className="modal-auth">
       <div className="modal-auth-content" >
@@ -61,8 +67,8 @@ const AuthModal = ({ setIsAuthModal }) => {
           <button onClick={() => setIsAuthModal(false)} className="close-auth-btn">Close</button>
         </header>
         {!token && <section className="section-inputs-modal">
-          <input type="text" value={userData.user} onChange={(ev) => setUserData(s => ({ ...s, user: ev.target.value }))} placeholder="User Name" className="inputs-edit-modal" maxLength={60} />
-          <input type="password" value={userData?.password} onChange={(ev) => setUserData(s => ({ ...s, password: ev.target.value }))} placeholder="Password" className="inputs-edit-modal" />
+          <input type="text" value={userData.user} onChange={handleUserData} placeholder="User Name" maxLength={60} name="user"/>
+          <input type="password" value={userData?.password} onChange={handleUserData} placeholder="Password"  name="password" />
           <button className="button-update" onClick={() => updateRow()}>Request Authorization</button>
         </section>}
         {token != null && <p className='text-user-authorized'> ✅ User Authorized!</p>}

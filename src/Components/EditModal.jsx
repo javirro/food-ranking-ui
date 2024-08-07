@@ -64,11 +64,11 @@ const EditModal = ({ table, row, setIsEditModal, setTrigger }) => {
         </header>
         <section className="section-inputs-modal">
           <label className="edit-modal-labels">Restaurant name</label>
-          <input type="text" value={data?.name} onChange={handleEdit} placeholder="Restaurant Name" className="inputs-edit-modal" maxLength={120}   name="name"/>
+          <input type="text" value={data?.name} onChange={handleEdit} placeholder="Restaurant Name" maxLength={120}   name="name"/>
           <label className="edit-modal-labels">Ranking position</label>
-          <input type="text" value={data?.position} onChange={handleEdit} placeholder="Position" className="inputs-edit-modal" name="position"/>
+          <input type="text" value={data?.position} onChange={handleEdit} placeholder="Position"  name="position"/>
           <label className="edit-modal-labels">Ubication</label>
-          <input type="text" value={data?.ubication} onChange={handleEdit} placeholder="Ubication" className="inputs-edit-modal" name="ubication"/>
+          <input type="text" value={data?.ubication} onChange={handleEdit} placeholder="Ubication" name="ubication"/>
           {/* <input type="text" value={`${data?.price} €`} onChange={(ev) => setData(s => ({ ...s, price: ev.target.value }))} placeholder="Price" className="inputs-edit-modal" /> */}
           <button className="button-update" onClick={() => updateRow()}>Update - {row.name}</button>
         </section>
