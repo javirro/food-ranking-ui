@@ -29,12 +29,18 @@ nav {
 
 @media all and (max-width: 425px) {
   .nav-items {
+    position: fixed;
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 10px;
     gap: 4px;
-    background-color: var(--main-middle-color);
+    background-color:  rgba(0,0,0,0.9);
+    min-height: 100vh;
+    width: 100%;
+    animation: movefromRight 0.5s;
   }
   .none {
     display: none;
@@ -42,10 +48,23 @@ nav {
 }
 
 .nav-link {
-  color: white;
+  width: 100%;
+  padding: 10px;
+  color: var(--main-light-color);
+  font-size: 24px;
   text-decoration: none;
+  border-bottom: 1px solid  var(--main-middle-color);
 }
 
 .nav-link.active {
   color: var(--main-title-color);
+}
+
+@keyframes movefromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
